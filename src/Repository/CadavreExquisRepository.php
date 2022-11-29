@@ -19,10 +19,10 @@ class CadavreExquisRepository extends ServiceEntityRepository
 {
     public function __construct(ManagerRegistry $registry)
     {
-        parent::__construct($registry, Annonce::class);
+        parent::__construct($registry, CadavreExquis::class);
     }
 
-    public function save(Annonce $entity, bool $flush = false): void
+    public function save(CadavreExquis $entity, bool $flush = false): void
     {
         $this->getEntityManager()->persist($entity);
 
@@ -31,7 +31,7 @@ class CadavreExquisRepository extends ServiceEntityRepository
         }
     }
 
-    public function remove(Annonce $entity, bool $flush = false): void
+    public function remove(CadavreExquis $entity, bool $flush = false): void
     {
         $this->getEntityManager()->remove($entity);
 

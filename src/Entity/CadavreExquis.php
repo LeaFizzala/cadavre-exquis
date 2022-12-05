@@ -7,6 +7,7 @@ use Doctrine\DBAL\Types\Types;
 use Doctrine\ORM\Mapping as ORM;
 
 #[ORM\Entity(repositoryClass: CadavreExquis::class)]
+#[ORM\HasLifecycleCallbacks]
 class CadavreExquis
 {
     #[ORM\Id]
@@ -16,6 +17,9 @@ class CadavreExquis
 
     #[ORM\Column(length: 3000, nullable:false)]
     private string $texte;
+
+    #[ORM\Column]
+    private \DateTimeImmutable $createdAt;
 
     /**
      * @return mixed
@@ -49,6 +53,10 @@ class CadavreExquis
         $this->texte = $texte;
     }
 
-
+    #[ORM\PrePersist]
+public function setCreatedAtValue()
+    {
+        $this->createdAt = new \DateTimeImmutable();
+    }
 
 }

@@ -22,7 +22,7 @@ class HomeController extends AbstractController
     {
         $this->twig = $twig;    }
 
-    #[Route('/home')]
+    #[Route('/')]
     public function index() : Response
     {
         return new Response($this->render('home/index.html.twig'));

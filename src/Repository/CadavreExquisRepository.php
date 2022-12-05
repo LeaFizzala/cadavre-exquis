@@ -22,6 +22,7 @@ class CadavreExquisRepository extends ServiceEntityRepository
         parent::__construct($registry, CadavreExquis::class);
     }
 
+
     public function save(CadavreExquis $entity, bool $flush = false): void
     {
         $this->getEntityManager()->persist($entity);
@@ -39,4 +40,5 @@ class CadavreExquisRepository extends ServiceEntityRepository
             $this->getEntityManager()->flush();
         }
     }
+
 }

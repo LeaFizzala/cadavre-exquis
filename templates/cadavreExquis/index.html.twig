@@ -1,10 +1,6 @@
 {# ici on va afficher le formulaire pour créer un cadavre Exquis#}
 {% block body %}
 
-    <h2>Liste des cadavres exquis</h2>
-    {% for cadavre in cadavres %}
-    <p>{{ cadavre.texte }}</p>
-    {% endfor %}
 
 {% include 'cadavreExquis/lastCorpse.html.twig' %}
 {% endblock %}

@@ -40,9 +40,9 @@ class CadavreExquisController extends AbstractController
         $cadavres = $this->cadavreExquisRepository->findAll();
         $lastCorpse = $this->cadavreExquisRepository->findBy(array(), array('id' => 'DESC'), 1);
 
-        return new Response($this->render('cadavreExquis/index.html.twig',
+        return $this->render('cadavreExquis/index.html.twig',
         ['cadavres' => $cadavres,
-        'lastCorpse' => $lastCorpse]));
+        'lastCorpse' => $lastCorpse]);
 
     }
     #[Route('/newCorpse')]
